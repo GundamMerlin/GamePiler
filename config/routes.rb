@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :backlogs
   resources :games
   resources :consoles
   devise_for :users, controllers: { registrations: 'registrations' }

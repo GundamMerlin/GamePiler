@@ -1,5 +1,5 @@
-class ConsolesController < ApplicationController
-  before_action :set_console, only: [:show, :update, :destroy]
+class ConsolesController < ApiController
+  before_action :set_console, only: %i[show update destroy]
 
   # GET /consoles
   def index
@@ -39,13 +39,14 @@ class ConsolesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_console
-      @console = Console.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def console_params
-      params.fetch(:console, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_console
+    @console = Console.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def console_params
+    params.fetch(:console, {})
+  end
 end
