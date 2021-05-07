@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :games
+  resources :consoles
   devise_for :users, controllers: { registrations: 'registrations' }
   namespace :api do
     namespace :v1 do
