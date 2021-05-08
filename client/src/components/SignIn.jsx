@@ -30,7 +30,7 @@ export default function SignIn(props) {
 
   return (
     <div>
-      <h1>THIS IS THE SIGN UP FORM</h1>
+      <h1>THIS IS THE SIGN IN FORM</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Email</label>
         <input name="email" type="email" />
