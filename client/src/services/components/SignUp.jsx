@@ -22,14 +22,23 @@ export default function SignUp() {
 
   return (
     <div className ="Signup-form">
-      <h1>THIS THE LANDING PAGE</h1>
+      <h1>THIS IS THE SIGN UP FORM</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Email</label>
-        <input name="email" type="email" />
+        <input
+          name="email"
+          type="email"
+          required/>
         <label>Password</label>
-        <input name="password" type="password" />
+        <input
+          name="password"
+          type="password"
+          required/>
         <label>Password Confirmation</label>
-        <input name="password_confirmation" type="password" />
+        <input
+          name="password_confirmation"
+          type="password"
+          required/>
         <button type="submit">New Game</button>
       </form>
     </div>
