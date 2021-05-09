@@ -1,22 +1,24 @@
 class BacklogsController < ApiController
   before_action :set_backlog, only: %i[show update destroy]
-
+  before_action :authenticate_user!, only: :index
   # GET /backlogs
   def index
-    @backlogs = Backlog.all
-
-    render json: @backlogs
+    render json: current_user.backlogs, include: %i[console game]
   end
 
   # GET /backlogs/1
   def show
-    render json: @backlog
+    if @backlog.user == current_user
+      render json: @backlog, include: %i[console game]
+    else
+      render json: 'Unauthorized'
+    end
   end
 
   # POST /backlogs
   def create
     @backlog = Backlog.new(backlog_params)
-
+    @backlog.user = current_user
     if @backlog.save
       render json: @backlog, status: :created, location: @backlog
     else
@@ -35,7 +37,7 @@ class BacklogsController < ApiController
 
   # DELETE /backlogs/1
   def destroy
-    @backlog.destroy
+    @backlog.destroy if @backlog.user == current_user
   end
 
   private

@@ -1,17 +1,13 @@
 import React from 'react'
 import { useHistory } from 'react-router';
-import { signInUser } from '../auth';
+import { signInUser } from './../services';
 import { useState } from 'react'
 
 
 export default function SignIn(props) {
-  let defaultInput = {
-    email: "",
-    password: "",
-  };
-
-  const [input, setInput] = useState(defaultInput);
-  const history = useHistory();
+ 
+  const [input, setInput] = useState();
+  // const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;

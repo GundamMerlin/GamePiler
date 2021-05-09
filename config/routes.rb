@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :backlogs
   resources :games
-  resources :consoles
+  resources :consoles do
+    resources :games
+  end
   devise_for :users, controllers: { registrations: 'registrations' }
   namespace :api do
     namespace :v1 do

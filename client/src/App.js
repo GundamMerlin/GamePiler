@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Switch } from "react-router-dom";
-import Landing from './services/screens/Landing';
+import Landing from './screens/Landing';
 import { verifyUser } from './services';
 import {useState, useEffect} from 'react'
 import BacklogGallery from './screens/BacklogGallery';
@@ -12,6 +12,9 @@ import AddConsole from './screens/AddConsole';
 
 
 function App() {
+  // const [backlog, setBacklog] = useState([])
+  // const [game, setGame] = useState([])
+  // const [console, setConsole] = useState([])
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
@@ -27,14 +30,25 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Landing verify={verify}/>
         </Route>
-        <BacklogGallery />
-        <GameDetails />
-        <EditGame />
-        <AddGame />
-        <AddConsole />
+        <Route exact path ="/backlogs">
+          <BacklogGallery currentUser={currentUser}/>
+        </Route>
+        <Route path="/game-details/:id">
+          <GameDetails />
+        </Route>
+        <Route path="/edit-game">
+          <EditGame  />
+        </Route>
+        <Route path="/add-game/:id">
+          <AddGame />
+        </Route>
+        <Route path="/add-console/:id">
+          <AddConsole />
+        </Route>
+        
      </Switch>
     </div>
   );
