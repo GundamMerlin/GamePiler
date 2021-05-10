@@ -1,5 +1,5 @@
 import React from 'react'
-import { signUpUser } from '../auth';
+import { signUpUser } from './../services';
 import { useState } from 'react'
 
 

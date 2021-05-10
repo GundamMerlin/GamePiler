@@ -52,17 +52,17 @@ export const getAllGames = async () => {
   return res.data
 }
 
-export const getBacklog = async () => {
+export const getBacklog = async (id) => {
   const res = await api.get(`/backlogs/${id}`)
   return res.data
 }
 
-export const getConsole = async () => {
+export const getConsole = async (id) => {
   const res = await api.get(`/consoles/${id}`)
   return res.data
 }
 
-export const getGame = async () => {
+export const getGame = async (id) => {
   const res = await api.get(`/games/${id}`)
   return res.data
 }
@@ -85,4 +85,29 @@ export const updateGame = async (id, formData) => {
   return updatedGame
 }
 
-export const createBacklog = async ()
+export const createBacklog = async (formData) => {
+  const res = await api.post("/backlogs", { backlogs: formData })
+  return res.data
+}
+
+export const createConsole = async (formData) => {
+  const res = await api.post("/consoles", { consoles: formData })
+  return res.data
+}
+
+export const createGame = async (formData) => {
+  const res = await api.post("/games", { games: formData })
+  return res.data
+}
+
+export const deleteBacklog = async (id) => {
+  await api.delete(`/backlogs/${id}`)
+}
+
+export const deleteConsole = async (id) => {
+  await api.delete(`/consoles/${id}`)
+}
+
+export const deleteGame = async (id) => {
+  await api.delete(`games/${id}`)
+}

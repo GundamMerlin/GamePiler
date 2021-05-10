@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :backlogs
+  has_many :games, through: :backlogs
+  has_many :consoles, through: :backlogs
 end
