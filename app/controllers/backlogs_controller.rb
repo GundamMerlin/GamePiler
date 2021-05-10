@@ -28,10 +28,14 @@ class BacklogsController < ApiController
 
   # PATCH/PUT /backlogs/1
   def update
-    if @backlog.update(backlog_params)
-      render json: @backlog
+    if @backlog.user == current_user
+      if @backlog.update(backlog_params)
+        render json: @backlog
+      else
+        render json: @backlog.errors, status: :unprocessable_entity
+      end
     else
-      render json: @backlog.errors, status: :unprocessable_entity
+      render status: 401
     end
   end
 

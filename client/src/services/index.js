@@ -86,17 +86,17 @@ export const updateGame = async (id, formData) => {
 }
 
 export const createBacklog = async (formData) => {
-  const res = await api.post("/backlogs", { backlogs: formData })
+  const res = await api.post("/backlogs", { backlog: formData })
   return res.data
 }
 
 export const createConsole = async (formData) => {
-  const res = await api.post("/consoles", { consoles: formData })
+  const res = await api.post("/consoles", { console: formData })
   return res.data
 }
 
 export const createGame = async (formData) => {
-  const res = await api.post("/games", { games: formData })
+  const res = await api.post("/games", { game: formData })
   return res.data
 }
 

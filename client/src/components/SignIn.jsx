@@ -7,7 +7,7 @@ import { useState } from 'react'
 export default function SignIn(props) {
  
   const [input, setInput] = useState();
-  // const history = useHistory();
+  const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,6 +21,7 @@ export default function SignIn(props) {
     e.preventDefault();
     await signInUser(input);
     props.verify();
+    history.push("/backlogs")
   };
 
 

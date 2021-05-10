@@ -8,20 +8,20 @@ import BackLogContainer from '../components/BackLogContainer'
 
 export default function BacklogGallery (props) {
   const [backlogs, setBacklogs] = useState([])
+  const [toggle, setToggle]= useState(true)
   
   useEffect(() => {
     fetchBacklogs();
-  },[props.currentUser])
+  },[props.currentUser, toggle])
 
   const fetchBacklogs = async () => {
     const data = await getAllBacklogs();
-    // console.log(data)
     setBacklogs(data)
   }
 
   return (
     <div>
-      <BackLogContainer backlogs={backlogs}/>
+      <BackLogContainer backlogs={backlogs} setToggle={setToggle} currentUser ={props.currentUser} />
     </div>
   )
 }
