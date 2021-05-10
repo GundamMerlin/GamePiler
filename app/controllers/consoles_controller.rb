@@ -47,6 +47,6 @@ class ConsolesController < ApiController
 
   # Only allow a list of trusted parameters through.
   def console_params
-    params.fetch(:console, {})
+    params.require(:console).permit(:name, :console_img)
   end
 end
