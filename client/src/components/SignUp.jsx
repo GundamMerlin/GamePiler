@@ -1,11 +1,14 @@
 import React from 'react'
 import { signUpUser } from './../services';
 import { useState } from 'react'
+import {useHistory} from 'react-router-dom'
 
 
 
 export default function SignUp() {
   const [input, setInput] = useState({});
+
+  const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,6 +21,8 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let res = await signUpUser(input);
+    history.push("/add-backlogs")
+
   }
 
   return (

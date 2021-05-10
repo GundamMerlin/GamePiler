@@ -5,7 +5,7 @@ export default function BackLogContainer(props) {
   return (
     <div>
       {props.backlogs.map((backlog) => {
-        return <BacklogCard backlog={backlog} key={backlog.id} />
+        return <BacklogCard backlog={backlog} key={backlog.id} setToggle={props.setToggle} currentUser={props.currentUser}/>
       })}
     </div>
   )
