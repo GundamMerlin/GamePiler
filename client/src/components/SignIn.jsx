@@ -38,9 +38,11 @@ export default function SignIn(props) {
       <h1>THIS IS THE SIGN IN FORM</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Email</label>
-        <input name="email" type="email" />
+        <input name="email" type="email"
+        required/>
         <label>Password</label>
-        <input name="password" type="password" />
+        <input name="password" type="password"
+        required/>
         <button type="submit">Continue Game</button>
       </form>
     </div>

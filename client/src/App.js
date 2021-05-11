@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, Switch } from "react-router-dom";
 import Landing from './screens/Landing';
-import { getAllConsoles, getAllGames, getGame, verifyUser } from './services';
+import { getAllConsoles, getAllGames, verifyUser } from './services';
 import {useState, useEffect} from 'react'
 import BacklogGallery from './screens/BacklogGallery';
 import GameDetails from './screens/GameDetails';
@@ -17,16 +17,13 @@ function App() {
   const [games, setGames] = useState([])
   const [consoles, setConsoles] = useState([])
   const [currentUser, setCurrentUser] = useState(null);
-  const [game, setGame] = useState([])
 
   const fetchGames = async () => {
     const data = await getAllGames();
-    // console.log(data)
     setGames(data)
   }
   const fetchConsoles = async () => {
     const data = await getAllConsoles();
-    // console.log(data)
     setConsoles(data)
   }
 

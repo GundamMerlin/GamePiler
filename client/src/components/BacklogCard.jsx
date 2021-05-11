@@ -1,15 +1,22 @@
 import React from 'react'
-import {useState} from 'react'
-import { updateBacklog } from '../services';
-import {Link} from 'react-router-dom'
+import { deleteBacklog, updateBacklog } from '../services';
+import { Link } from 'react-router-dom'
+import {useHistory} from "react-router-dom"
+
 
 
 
 export default function BacklogCard(props) {
   
-  console.log(props)
+  const history = useHistory();
 
-  
+
+  async function handleDelete() {
+    await deleteBacklog(props.backlog.id);
+    props.setToggle((prevState) => !prevState);
+    history.push("/backlogs")
+  }
+
 
   const handleChange = async (e) => {
     if (e.target.checked) {
@@ -24,7 +31,7 @@ export default function BacklogCard(props) {
   return (
     
     <div className="backlog-card">
-      <h1>{props.backlog.game.cover_img}</h1>
+      <img src={props.backlog.game.cover_img} alt={props.backlog.game.title}/>
       <label>Complete?</label>
       <br></br>
       <input type="checkbox"
@@ -34,6 +41,7 @@ export default function BacklogCard(props) {
         onChange={handleChange}
       >
       </input>
+      <button type="submit" onSubmit={handleDelete}>Delete Save</button>
       <br></br>
       <Link to={`/games/${props.backlog.game.id}`}>Details</Link>
     </div>
