@@ -26,16 +26,15 @@ export default function SignUp(props) {
     e.preventDefault();
     let res = await signUpUser(input);
     props.setCurrentUser(res)
-    // history.push("/add-backlogs")
     if (props.currentUser) {
-      history.push("/add-backlogs")
+      alert("Account was created, please sign in.")
     } else {
-      alert("must sign up")
+      alert("Account Creation Error")
     }
   }
 
   return (
-    <div className ="Signup-form">
+    <div className ="signup-form">
       <h1>THIS IS THE SIGN UP FORM</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Email</label>
@@ -43,18 +42,21 @@ export default function SignUp(props) {
           name="email"
           type="email"
           value={input.email}
+          required
           />
         <label>Password</label>
         <input
           name="password"
           type="password"
           value={input.password}
+          required
           />
         <label>Password Confirmation</label>
         <input
           name="password_confirmation"
           type="password"
           value={input.password_confirmation}
+          required
           />
         <button type="submit">New Game</button>
       </form>

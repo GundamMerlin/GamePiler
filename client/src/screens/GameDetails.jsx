@@ -17,7 +17,7 @@ export default function GameDetails() {
     setGame(game);
     
   };
-console.log(game)
+  
   return (
     
     <div>

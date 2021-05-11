@@ -17,16 +17,13 @@ function App() {
   const [games, setGames] = useState([])
   const [consoles, setConsoles] = useState([])
   const [currentUser, setCurrentUser] = useState(null);
-  const [game, setGame] = useState([])
 
   const fetchGames = async () => {
     const data = await getAllGames();
-    // console.log(data)
     setGames(data)
   }
   const fetchConsoles = async () => {
     const data = await getAllConsoles();
-    // console.log(data)
     setConsoles(data)
   }
 
