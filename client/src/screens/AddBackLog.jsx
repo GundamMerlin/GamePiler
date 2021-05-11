@@ -1,6 +1,9 @@
 import React from 'react'
 import { createBacklog } from '../services';
-import {useState} from "react"
+import { useState } from "react"
+import { useHistory } from "react-router-dom"
+import NavBar from '../components/NavBar'
+
 
 export default function AddBackLog(props) {
   let { consoles, games } = props
@@ -9,7 +12,7 @@ export default function AddBackLog(props) {
     console_id: "",
     done: false
   }
-  
+  const history = useHistory();
   const [input, setInput] = useState(defaultInput)
   
   const handleChange = (e) => {
@@ -23,12 +26,14 @@ export default function AddBackLog(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await createBacklog(input);
+    history.push('/backlogs')
   }
 
 
 
   return (
     <div>
+      <NavBar/>
       <h1>This is the add backlog page</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Console</label>

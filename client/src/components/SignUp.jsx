@@ -1,12 +1,16 @@
 import React from 'react'
-import { signUpUser } from './../services';
+import { signInUser, signUpUser } from './../services';
 import { useState } from 'react'
 import {useHistory} from 'react-router-dom'
 
 
 
-export default function SignUp() {
-  const [input, setInput] = useState({});
+export default function SignUp(props) {
+  const [input, setInput] = useState({
+    email: "",
+    password: "",
+    password_confirmation: ""
+  });
 
   const history = useHistory();
 
@@ -21,8 +25,13 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let res = await signUpUser(input);
-    history.push("/add-backlogs")
-
+    props.setCurrentUser(res)
+    // history.push("/add-backlogs")
+    if (props.currentUser) {
+      history.push("/add-backlogs")
+    } else {
+      alert("must sign up")
+    }
   }
 
   return (
@@ -33,17 +42,20 @@ export default function SignUp() {
         <input
           name="email"
           type="email"
-          required/>
+          value={input.email}
+          />
         <label>Password</label>
         <input
           name="password"
           type="password"
-          required/>
+          value={input.password}
+          />
         <label>Password Confirmation</label>
         <input
           name="password_confirmation"
           type="password"
-          required/>
+          value={input.password_confirmation}
+          />
         <button type="submit">New Game</button>
       </form>
     </div>

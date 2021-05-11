@@ -3,9 +3,9 @@ import BacklogCard from './BacklogCard'
 
 export default function BackLogContainer(props) {
   return (
-    <div>
+    <div className ="card-container">
       {props.backlogs.map((backlog) => {
-        return <BacklogCard backlog={backlog} key={backlog.id} setToggle={props.setToggle} currentUser={props.currentUser}/>
+        return <BacklogCard backlog={backlog} key={backlog.id} setToggle={props.setToggle} currentUser={props.currentUser} games={props.games}/>
       })}
     </div>
   )

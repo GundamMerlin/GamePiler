@@ -6,7 +6,10 @@ import { useState } from 'react'
 
 export default function SignIn(props) {
  
-  const [input, setInput] = useState();
+  const [input, setInput] = useState({
+    email: "",
+    password:""
+  });
   const history = useHistory();
 
   const handleChange = (e) => {
@@ -19,14 +22,19 @@ export default function SignIn(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signInUser(input);
-    props.verify();
-    history.push("/backlogs")
+    const res = await signInUser(input);
+    props.setCurrentUser(res)
+    if (props.currentUser) {
+      props.verify();
+      history.push("/backlogs")
+    } else {
+      alert("Invalid Credentials")
+    }
   };
 
 
   return (
-    <div>
+    <div className = "signin-form">
       <h1>THIS IS THE SIGN IN FORM</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Email</label>
