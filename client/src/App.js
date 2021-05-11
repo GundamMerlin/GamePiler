@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import { Route, Switch } from "react-router-dom";
 import Landing from './screens/Landing';
 import { getAllConsoles, getAllGames, verifyUser } from './services';
@@ -70,13 +70,13 @@ function App() {
           <EditGame currentUser={currentUser} games={games}/>
         </Route>
         <Route path="/add-game/">
-          <AddGame currentUser={currentUser}/>
+          <AddGame currentUser={currentUser} setToggle={setToggle}/>
         </Route>
         <Route path="/add-console/">
-          <AddConsole currentUser={currentUser}/>
+          <AddConsole currentUser={currentUser} setToggle={setToggle}/>
         </Route>
         <Route path="/add-backlogs">
-          <AddBackLog games={games} consoles={consoles} currentUser={currentUser}/>
+          <AddBackLog games={games} consoles={consoles} currentUser={currentUser} setToggle={setToggle}/>
         </Route>
         
      </Switch>

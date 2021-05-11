@@ -1,6 +1,5 @@
-.App {
-  position: relative;
+.backlog-gallery {
+  display: flex;
   background-color: #0a0908;
-  height: 100vh;
   width: 100vw;
 }

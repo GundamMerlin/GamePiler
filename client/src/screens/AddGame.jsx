@@ -1,7 +1,7 @@
 import React from 'react'
 import { createGame } from './../services'
 import { useState } from "react"
-import NavBar from '../components/NavBar'
+
 
 export default function AddGame() {
   const defaultInput = {
