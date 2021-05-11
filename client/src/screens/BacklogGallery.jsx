@@ -9,11 +9,11 @@ import NavBar from '../components/NavBar'
 
 export default function BacklogGallery (props) {
   const [backlogs, setBacklogs] = useState([])
-  const [toggle, setToggle]= useState(true)
+  
   
   useEffect(() => {
     fetchBacklogs();
-  },[props.currentUser, toggle])
+  },[props.currentUser, props.toggle])
 
   const fetchBacklogs = async () => {
     const data = await getAllBacklogs();
@@ -22,8 +22,7 @@ export default function BacklogGallery (props) {
 
   return (
     <div>
-      <NavBar/>
-      <BackLogContainer backlogs={backlogs} setToggle={setToggle} currentUser ={props.currentUser} />
+      <BackLogContainer backlogs={backlogs} setToggle={props.setToggle} currentUser ={props.currentUser} />
     </div>
   )
 }

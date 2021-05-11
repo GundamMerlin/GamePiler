@@ -33,7 +33,6 @@ export default function AddBackLog(props) {
 
   return (
     <div>
-      <NavBar/>
       <h1>This is the add backlog page</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Console</label>

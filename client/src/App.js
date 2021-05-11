@@ -9,6 +9,7 @@ import EditGame from './screens/EditGame';
 import AddGame from './screens/AddGame';
 import AddConsole from './screens/AddConsole';
 import AddBackLog from './screens/AddBackLog';
+import NavBar from './components/NavBar';
 
 
 
@@ -17,6 +18,7 @@ function App() {
   const [games, setGames] = useState([])
   const [consoles, setConsoles] = useState([])
   const [currentUser, setCurrentUser] = useState(null);
+  const [toggle, setToggle]= useState(true)
 
   const fetchGames = async () => {
     const data = await getAllGames();
@@ -34,22 +36,32 @@ function App() {
     fetchGames();
     
 
-  },[]);
+  },[toggle]);
 
   const verify = async () => {
     let user = await verifyUser();
     setCurrentUser(user)
   }
 
+  const renderNavbar = () => {
+    if (currentUser) {
+      return (
+        <div>
+          <NavBar setToggle={setToggle}></NavBar>
+        </div>
+      )
+    }
+  }
 
   return (
     <div className="App">
+      {renderNavbar()}
       <Switch>
         <Route exact path="/">
           <Landing verify={verify} setCurrentUser={setCurrentUser} currentUser={currentUser}/>
         </Route>
         <Route exact path ="/backlogs">
-          <BacklogGallery currentUser={currentUser} games={games} />
+          <BacklogGallery currentUser={currentUser} games={games} setToggle={setToggle} toggle={toggle} />
         </Route>
         <Route exact path="/games/:id">
           <GameDetails games={games} currentUser={currentUser}/>
