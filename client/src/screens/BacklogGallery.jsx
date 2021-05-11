@@ -2,6 +2,7 @@ import React from 'react'
 import { getAllBacklogs } from './../services'
 import {useEffect, useState} from 'react' 
 import BackLogContainer from '../components/BackLogContainer'
+import NavBar from '../components/NavBar'
 
 
 
@@ -21,6 +22,7 @@ export default function BacklogGallery (props) {
 
   return (
     <div>
+      <NavBar/>
       <BackLogContainer backlogs={backlogs} setToggle={setToggle} currentUser ={props.currentUser} />
     </div>
   )

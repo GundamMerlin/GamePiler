@@ -1,6 +1,7 @@
 import React from 'react'
 import { createGame } from './../services'
 import { useState } from "react"
+import NavBar from '../components/NavBar'
 
 export default function AddGame() {
   const defaultInput = {
@@ -26,6 +27,7 @@ export default function AddGame() {
 
   return (
     <div>
+      <NavBar/>
       <h1>This is the add game and/or add to backlog page</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
       <label>Title:</label>

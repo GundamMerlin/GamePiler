@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, Switch } from "react-router-dom";
 import Landing from './screens/Landing';
-import { getAllConsoles, getAllGames, verifyUser } from './services';
+import { getAllConsoles, getAllGames, getGame, verifyUser } from './services';
 import {useState, useEffect} from 'react'
 import BacklogGallery from './screens/BacklogGallery';
 import GameDetails from './screens/GameDetails';
@@ -17,6 +17,7 @@ function App() {
   const [games, setGames] = useState([])
   const [consoles, setConsoles] = useState([])
   const [currentUser, setCurrentUser] = useState(null);
+  const [game, setGame] = useState([])
 
   const fetchGames = async () => {
     const data = await getAllGames();
@@ -28,10 +29,13 @@ function App() {
     // console.log(data)
     setConsoles(data)
   }
+
+
   useEffect(() => {
     verify();
     fetchConsoles();
     fetchGames();
+    
 
   },[]);
 
@@ -45,25 +49,25 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <Landing verify={verify}/>
+          <Landing verify={verify} setCurrentUser={setCurrentUser} currentUser={currentUser}/>
         </Route>
         <Route exact path ="/backlogs">
-          <BacklogGallery currentUser={currentUser} />
+          <BacklogGallery currentUser={currentUser} games={games} />
         </Route>
-        <Route path="/game-details/:id">
-          <GameDetails games={games}/>
+        <Route exact path="/games/:id">
+          <GameDetails games={games} currentUser={currentUser}/>
         </Route>
         <Route path="/edit-game">
-          <EditGame  />
+          <EditGame currentUser={currentUser} games={games}/>
         </Route>
         <Route path="/add-game/">
-          <AddGame />
+          <AddGame currentUser={currentUser}/>
         </Route>
         <Route path="/add-console/">
-          <AddConsole />
+          <AddConsole currentUser={currentUser}/>
         </Route>
         <Route path="/add-backlogs">
-          <AddBackLog games={games} consoles={consoles}/>
+          <AddBackLog games={games} consoles={consoles} currentUser={currentUser}/>
         </Route>
         
      </Switch>

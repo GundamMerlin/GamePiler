@@ -1,12 +1,13 @@
 import React from 'react'
 import {useState} from 'react'
 import { updateBacklog } from '../services';
+import {Link} from 'react-router-dom'
 
 
 
 export default function BacklogCard(props) {
   
-  // const [done, setDone] = useState(false);
+  console.log(props)
 
   
 
@@ -22,7 +23,7 @@ export default function BacklogCard(props) {
   if (props.backlog.user_id === props.currentUser.id)
   return (
     
-    <div>
+    <div className="backlog-card">
       <h1>{props.backlog.game.cover_img}</h1>
       <label>Complete?</label>
       <br></br>
@@ -33,6 +34,8 @@ export default function BacklogCard(props) {
         onChange={handleChange}
       >
       </input>
+      <br></br>
+      <Link to={`/games/${props.backlog.game.id}`}>Details</Link>
     </div>
   )
  }

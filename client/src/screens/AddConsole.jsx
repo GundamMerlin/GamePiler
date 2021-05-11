@@ -1,6 +1,7 @@
 import React from 'react'
 import { createConsole } from './../services'
 import { useState } from "react"
+import NavBar from '../components/NavBar'
 
 export default function AddGame() {
   const defaultInput = {
@@ -25,6 +26,7 @@ export default function AddGame() {
 
   return (
     <div>
+      <NavBar/>
       <h1>This is add console</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
       <label>Title:</label>
