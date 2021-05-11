@@ -15,7 +15,6 @@ export default function GameDetails() {
   const fetchGame = async () => {
     const game = await getGame(id);
     setGame(game);
-    
   };
   
   return (
@@ -25,7 +24,7 @@ export default function GameDetails() {
       
       <div className="game-details">
         <h1>{game.title}</h1>
-        <img src={game.cover_img} />
+        <img src={game.cover_img} alt={game.title}/>
         <br></br>
         <label>Description</label>
         <p>{game.description}</p>

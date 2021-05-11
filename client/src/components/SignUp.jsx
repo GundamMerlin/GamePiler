@@ -1,7 +1,7 @@
 import React from 'react'
-import { signInUser, signUpUser } from './../services';
+import { signUpUser } from './../services';
 import { useState } from 'react'
-import {useHistory} from 'react-router-dom'
+
 
 
 
@@ -12,7 +12,6 @@ export default function SignUp(props) {
     password_confirmation: ""
   });
 
-  const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;

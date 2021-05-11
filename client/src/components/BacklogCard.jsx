@@ -31,7 +31,7 @@ export default function BacklogCard(props) {
   return (
     
     <div className="backlog-card">
-      <img src={props.backlog.game.cover_img}/>
+      <img src={props.backlog.game.cover_img} alt={props.backlog.game.title}/>
       <label>Complete?</label>
       <br></br>
       <input type="checkbox"

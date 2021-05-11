@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, Switch } from "react-router-dom";
 import Landing from './screens/Landing';
-import { getAllConsoles, getAllGames, getGame, verifyUser } from './services';
+import { getAllConsoles, getAllGames, verifyUser } from './services';
 import {useState, useEffect} from 'react'
 import BacklogGallery from './screens/BacklogGallery';
 import GameDetails from './screens/GameDetails';
