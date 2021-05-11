@@ -2,16 +2,17 @@ import React from 'react'
 import { createBacklog } from '../services';
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
-import NavBar from '../components/NavBar'
+
 
 
 export default function AddBackLog(props) {
-  let { consoles, games } = props
+  let { consoles, games, setToggle } = props
   const defaultInput = {
     game_id: "",
     console_id: "",
     done: false
   }
+
   const history = useHistory();
   const [input, setInput] = useState(defaultInput)
   
@@ -26,6 +27,7 @@ export default function AddBackLog(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await createBacklog(input);
+    setToggle(prevState =>!prevState)
     history.push('/backlogs')
   }
 

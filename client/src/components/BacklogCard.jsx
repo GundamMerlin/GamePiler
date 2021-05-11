@@ -1,7 +1,8 @@
 import React from 'react'
 import { deleteBacklog, updateBacklog } from '../services';
 import { Link } from 'react-router-dom'
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom"
+import "./BackLogCard.css"
 
 
 
@@ -31,18 +32,15 @@ export default function BacklogCard(props) {
   return (
     
     <div className="backlog-card">
-      <img src={props.backlog.game.cover_img} alt={props.backlog.game.title}/>
+      <img className={props.backlog.done ? "backlog_cover hidden":"backlog_cover"} src={props.backlog.game.cover_img} alt={props.backlog.game.title}/>
       <label>Complete?</label>
-      <br></br>
-      <input type="checkbox"
+      <input id="checkbox" type="checkbox"
         name="done"
         value={props.backlog.done}
         checked={props.backlog.done}
-        onChange={handleChange}
-      >
+        onChange={handleChange} >
       </input>
       <button onClick={handleDelete}>Delete Save</button>
-      <br></br>
       <Link to={`/games/${props.backlog.game.id}`}>Details</Link>
     </div>
   )

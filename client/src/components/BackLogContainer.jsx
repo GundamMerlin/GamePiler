@@ -1,5 +1,6 @@
 import React from 'react'
 import BacklogCard from './BacklogCard'
+import './BackLogContainer.css'
 
 export default function BackLogContainer(props) {
   return (

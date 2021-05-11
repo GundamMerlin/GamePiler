@@ -1,6 +1,5 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import NavBar from '../components/NavBar'
 import { getGame } from '../services';
 import {useState,useEffect} from 'react'
 
@@ -20,8 +19,6 @@ export default function GameDetails() {
   return (
     
     <div>
-      <NavBar/>
-      
       <div className="game-details">
         <h1>{game.title}</h1>
         <img src={game.cover_img} alt={game.title}/>

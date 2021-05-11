@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-
+import './NavBar.css'
 
 export default function NavBar(props) {
   const history = useHistory();
@@ -12,7 +12,7 @@ export default function NavBar(props) {
   };
 
   return (
-    <div>
+    <div className = "NavBar">
       <Link to ="/backlogs">Home</Link>
       <Link to="/add-game">Add Game</Link>
       <Link to="/add-console">Add Console</Link>

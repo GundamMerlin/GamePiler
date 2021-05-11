@@ -3,7 +3,7 @@ class BacklogsController < ApiController
   before_action :authenticate_user!, only: :index
   # GET /backlogs
   def index
-    render json: current_user.backlogs, include: %i[console game]
+    render json: current_user.backlogs.order(created_at: :desc), include: %i[console game]
   end
 
   # GET /backlogs/1
