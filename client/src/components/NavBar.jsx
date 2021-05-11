@@ -13,11 +13,11 @@ export default function NavBar(props) {
 
   return (
     <div>
-      <Link>Home</Link>
-      <Link>Add Game</Link>
-      <Link>Add Console</Link>
-      <Link>Add Backlog</Link>
-      <button onSubmit={logout}>Signout</button>
+      <Link to ="/backlogs">Home</Link>
+      <Link to="/add-game">Add Game</Link>
+      <Link to="/add-console">Add Console</Link>
+      <Link to="/add-backlogs">Add Backlog</Link>
+      <button onClick={logout}>Signout</button>
     </div>
   )
 }

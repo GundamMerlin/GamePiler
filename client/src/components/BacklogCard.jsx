@@ -9,9 +9,9 @@ import {useHistory} from "react-router-dom"
 export default function BacklogCard(props) {
   
   const history = useHistory();
+  
 
-
-  async function handleDelete() {
+  const handleDelete = async () => {
     await deleteBacklog(props.backlog.id);
     props.setToggle((prevState) => !prevState);
     history.push("/backlogs")
@@ -41,7 +41,7 @@ export default function BacklogCard(props) {
         onChange={handleChange}
       >
       </input>
-      <button type="submit" onSubmit={handleDelete}>Delete Save</button>
+      <button onClick={handleDelete}>Delete Save</button>
       <br></br>
       <Link to={`/games/${props.backlog.game.id}`}>Details</Link>
     </div>

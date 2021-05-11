@@ -23,12 +23,13 @@ export default function SignIn(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await signInUser(input);
-    props.setCurrentUser(res)
-    if (props.currentUser) {
+    console.log(res)
+    if (res.errors === "invalid") {
+      alert("Invalid Credentials")
+    } else {
+      props.setCurrentUser(res)
       props.verify();
       history.push("/backlogs")
-    } else {
-      alert("Invalid Credentials")
     }
   };
 
