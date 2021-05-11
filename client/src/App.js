@@ -8,7 +8,6 @@ import GameDetails from './screens/GameDetails';
 import EditGame from './screens/EditGame';
 import AddGame from './screens/AddGame';
 import AddConsole from './screens/AddConsole';
-import AddBackLog from './screens/AddBackLog';
 import NavBar from './components/NavBar';
 
 
@@ -61,7 +60,7 @@ function App() {
           <Landing verify={verify} setCurrentUser={setCurrentUser} currentUser={currentUser}/>
         </Route>
         <Route exact path ="/backlogs">
-          <BacklogGallery currentUser={currentUser} games={games} setToggle={setToggle} toggle={toggle} />
+          <BacklogGallery currentUser={currentUser} games={games} setToggle={setToggle} toggle={toggle} consoles={consoles} />
         </Route>
         <Route exact path="/games/:id">
           <GameDetails games={games} currentUser={currentUser}/>
@@ -75,10 +74,6 @@ function App() {
         <Route path="/add-console/">
           <AddConsole currentUser={currentUser} setToggle={setToggle}/>
         </Route>
-        <Route path="/add-backlogs">
-          <AddBackLog games={games} consoles={consoles} currentUser={currentUser} setToggle={setToggle}/>
-        </Route>
-        
      </Switch>
     </div>
   );

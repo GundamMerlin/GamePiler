@@ -34,7 +34,7 @@ export default function SignUp(props) {
 
   return (
     <div className ="signup-form">
-      <h1>THIS IS THE SIGN UP FORM</h1>
+      <h1>New Game?</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Email</label>
         <input

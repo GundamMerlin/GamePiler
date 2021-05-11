@@ -1,9 +1,10 @@
 import React from 'react'
 import { createConsole } from './../services'
 import { useState } from "react"
+import "./AddConsole.css"
 
-
-export default function AddGame() {
+export default function AddConsole(props) {
+  const {setToggle} =props
   const defaultInput = {
     name: "",
     console_img: ""
@@ -22,11 +23,12 @@ export default function AddGame() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await createConsole(input);
+    setToggle(prevState =>!prevState)
   }
 
   return (
-    <div>
-      <h1>This is add console</h1>
+    <div className = "add-console-container">
+      <h1>Add Console</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
       <label>Title:</label>
       <input

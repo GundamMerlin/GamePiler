@@ -3,10 +3,12 @@ import { getAllBacklogs } from './../services'
 import {useEffect, useState} from 'react' 
 import BackLogContainer from '../components/BackLogContainer'
 import "./BackLogGallery.css"
+import AddBackLog from './AddBackLog'
 
 
 export default function BacklogGallery (props) {
   const [backlogs, setBacklogs] = useState([])
+  const { games, consoles, currentUser, setToggle } = props
   
   
   useEffect(() => {
@@ -19,7 +21,9 @@ export default function BacklogGallery (props) {
   }
 
   return (
+  
     <div className="backlog-gallery">
+      <AddBackLog games={games} consoles={consoles} currentUser={currentUser} setToggle={setToggle}/>
       <BackLogContainer backlogs={backlogs} setToggle={props.setToggle} currentUser ={props.currentUser} />
     </div>
   )

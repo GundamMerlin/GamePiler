@@ -34,17 +34,16 @@ export default function AddBackLog(props) {
 
 
   return (
-    <div>
-      <h1>This is the add backlog page</h1>
+    <div className="add-backlog-form">
+      <h1>Add to your backlog</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
-        <label>Console</label>
+        
         <select name="console_id" value ={input.console_id}>
           <option value="">Select a console</option>
           {consoles.map((console) => {
           return <option value={console.id}>{console.name}</option>
         })}</select>
-        <br />
-        <label>Game</label>
+        
         <select name="game_id">
         <option value="">Select a game</option>
           {games.map((game) => {
