@@ -1,5 +1,5 @@
 import React from 'react'
-import { getAllBacklogs } from './../services'
+import { getAllBacklogs } from '../services'
 import {useEffect, useState} from 'react' 
 import BackLogContainer from '../components/BackLogContainer'
 import "./BackLogGallery.css"
@@ -18,10 +18,9 @@ export default function BacklogGallery (props) {
   const fetchBacklogs = async () => {
     const data = await getAllBacklogs();
     setBacklogs(data)
-  }
+  };
 
   return (
-  
     <div className="backlog-gallery">
       <AddBackLog games={games} consoles={consoles} currentUser={currentUser} setToggle={setToggle}/>
       <BackLogContainer backlogs={backlogs} setToggle={props.setToggle} currentUser ={props.currentUser} />

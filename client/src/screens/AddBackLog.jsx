@@ -28,7 +28,7 @@ export default function AddBackLog(props) {
     e.preventDefault();
     await createBacklog(input);
     setToggle(prevState =>!prevState)
-    history.push('/backlogs')
+    return history.push('/backlogs')
   }
 
 

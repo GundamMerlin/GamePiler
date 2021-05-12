@@ -1,5 +1,5 @@
 import React from 'react'
-import { signUpUser } from './../services';
+import { signInUser, signUpUser } from './../services';
 import { useState } from 'react'
 import {useHistory} from "react-router-dom"
 
@@ -25,45 +25,48 @@ export default function SignUp(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let res = await signUpUser(input);
-    
+    const login = {
+      email: input.email,
+      password: input.password
+    }
+    await signInUser(login)
     props.setCurrentUser(res)
-    history.push("/add-backlog")
-    console.log(res)
-    // console.log(`${props.currentUser}`)
-    // if (props.currentUser) {
-    //   alert("Account was created, please sign in.")
-    // } else {
-    //   alert("Account Creation Error")
-    // }
-  }
+    props.verify();
+    return history.push("/backlogs")
+  };
+
+  
 
   return (
     <div className ="signup-form">
-      <h1>New Game?</h1>
-      <form onChange={handleChange} onSubmit={handleSubmit}>
-        <label>Email</label>
-        <input
-          name="email"
-          type="email"
-          value={input.email}
-          required
+      <h1 onClick={props.handleNew}>New Game?</h1>
+      {!props.newGame ? "" :
+        <form onChange={handleChange} onSubmit={handleSubmit}>
+          <label>Email</label>
+          <input
+            name="email"
+            type="email"
+            value={input.email}
+            required
           />
-        <label>Password</label>
-        <input
-          name="password"
-          type="password"
-          value={input.password}
-          required
+          <label>Password</label>
+          <input
+            name="password"
+            type="password"
+            value={input.password}
+            required
           />
-        <label>Password Confirmation</label>
-        <input
-          name="password_confirmation"
-          type="password"
-          value={input.password_confirmation}
-          required
+          <label>Password Confirmation</label>
+          <input
+            name="password_confirmation"
+            type="password"
+            value={input.password_confirmation}
+            required
           />
-        <button type="submit">New Game</button>
-      </form>
+          <button type="submit">New Game</button>
+        </form>
+      }
+      
     </div>
   )
 }

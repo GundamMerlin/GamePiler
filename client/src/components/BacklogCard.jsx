@@ -44,4 +44,4 @@ export default function BacklogCard(props) {
       <Link to={`/games/${props.backlog.game.id}`}>Details</Link>
     </div>
   )
- }
+}
