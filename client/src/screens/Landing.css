@@ -1,11 +1,17 @@
 .landing-page-container {
   background-color: #0a0908;
-  color: #f1210edf;
+  color: #f10ee6df;
   display: flex;
   height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.landing-page-container label {
+  color: #ff2600;
+  font-family: "Righteous", cursive;
+  font-size: 18px;
 }
 
 .signin-form {
@@ -19,6 +25,7 @@
   padding: 10px;
   border-radius: 5px;
   font-family: "Monoton", cursive;
+  padding: 4px;
 }
 
 .signup-form {
