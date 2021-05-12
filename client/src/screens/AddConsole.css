@@ -1,0 +1,7 @@
+.add-console-container {
+  color: #c6ac8f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,8 +1,22 @@
 .landing-page-container {
   background-color: #0a0908;
-  color: #22333b;
+  color: #eae0d5;
   display: flex;
   height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
