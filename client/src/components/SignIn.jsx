@@ -36,16 +36,16 @@ export default function SignIn(props) {
 
   return (
     <div className = "signin-form">
-      <h1>Continue?</h1>
-      <form onChange={handleChange} onSubmit={handleSubmit}>
+      <h1 onClick = {props.handleContinue}>Continue?</h1>
+      {!props.continueGame ? "" : <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Email</label>
         <input name="email" type="email"
-        required/>
+          required />
         <label>Password</label>
         <input name="password" type="password"
-        required/>
+          required />
         <button type="submit">Continue Game</button>
-      </form>
+      </form>}
     </div>
   )
 }

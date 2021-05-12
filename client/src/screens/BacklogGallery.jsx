@@ -1,5 +1,5 @@
 import React from 'react'
-import { getAllBacklogs } from './../services'
+import { getAllBacklogs } from '../services'
 import {useEffect, useState} from 'react' 
 import BackLogContainer from '../components/BackLogContainer'
 import "./BackLogGallery.css"
