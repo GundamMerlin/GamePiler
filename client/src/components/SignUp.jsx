@@ -1,5 +1,5 @@
 import React from 'react'
-import { signUpUser } from './../services';
+import { signInUser, signUpUser } from './../services';
 import { useState } from 'react'
 import {useHistory} from "react-router-dom"
 
@@ -25,9 +25,16 @@ export default function SignUp(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let res = await signUpUser(input);
-    props.setCurrentUser(res)
-    history.push("/backlogs")
+    const login = {
+      email: input.email,
+      password: input.password
     }
+    await signInUser(login)
+    props.setCurrentUser(res)
+    props.verify();
+    return history.push("/backlogs")
+  };
+
   
 
   return (

@@ -5,3 +5,9 @@
   align-items: center;
   justify-content: center;
 }
+
+.add-game-container form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

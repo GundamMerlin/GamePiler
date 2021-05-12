@@ -9,15 +9,31 @@
 }
 
 .signin-form {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  top: 50vh;
+  z-index: 1;
+  background-color: #0a090870;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .signup-form {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  top: 65vh;
+  z-index: 1;
+  background-color: #0a090870;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.videoTag {
+  z-index: 0;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router';
+import { Redirect, useHistory } from 'react-router';
 import { signInUser } from './../services';
 import { useState } from 'react'
 
@@ -10,7 +10,7 @@ export default function SignIn(props) {
     email: "",
     password:""
   });
-  const history = useHistory();
+   const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,13 +23,12 @@ export default function SignIn(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await signInUser(input);
-    console.log(res)
     if (res.errors === "invalid") {
       alert("Invalid Credentials")
     } else {
       props.setCurrentUser(res)
       props.verify();
-      history.push("/backlogs")
+      return history.push("/backlogs")
     }
   };
 
