@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Consoles.destroy_all
+Console.destroy_all
 
-Games.destroy_all
+Game.destroy_all
 
 Console.create([
                  { name: 'Xbox',
