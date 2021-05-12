@@ -24,7 +24,8 @@ export const signInUser = async (formData) => {
 };
 
 export const signUpUser = async (formData) => {
-  await api.post("/users", formData)
+  const res = await api.post("/users", formData)
+  return res.data
 };
 
 export const verifyUser = async () => {

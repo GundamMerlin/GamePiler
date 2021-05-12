@@ -1,6 +1,7 @@
 import React from 'react'
 import { signUpUser } from './../services';
 import { useState } from 'react'
+import {useHistory} from "react-router-dom"
 
 
 
@@ -12,7 +13,7 @@ export default function SignUp(props) {
     password_confirmation: ""
   });
 
-
+  const history = useHistory();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInput((prevState) => ({
@@ -24,12 +25,16 @@ export default function SignUp(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let res = await signUpUser(input);
+    
     props.setCurrentUser(res)
-    if (props.currentUser) {
-      alert("Account was created, please sign in.")
-    } else {
-      alert("Account Creation Error")
-    }
+    history.push("/add-backlog")
+    console.log(res)
+    // console.log(`${props.currentUser}`)
+    // if (props.currentUser) {
+    //   alert("Account was created, please sign in.")
+    // } else {
+    //   alert("Account Creation Error")
+    // }
   }
 
   return (
