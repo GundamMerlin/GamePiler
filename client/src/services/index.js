@@ -2,7 +2,7 @@ import axios from "axios"
 
 let apiURL;
 const apiURLS = {
-  production: "Dummy URL",
+  production: "https://radiant-falls-02117.herokuapp.com/",
   development: "http://localhost:3000"
 };
 
