@@ -41,7 +41,7 @@ export default function BacklogCard(props) {
         onChange={handleChange} >
       </input>
       <button onClick={handleDelete}>Delete Save</button>
-      <Link to={`/games/${props.backlog.game.id}`}>Details</Link>
+      <Link to={`/games/${props.backlog.game.id}`}><button>Details</button></Link>
     </div>
   )
 }
