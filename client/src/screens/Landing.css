@@ -1,6 +1,6 @@
 .landing-page-container {
   background-color: #0a0908;
-  color: #eae0d5;
+  color: #f1210edf;
   display: flex;
   height: 100vh;
   flex-direction: column;
@@ -14,11 +14,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  top: 50vh;
+  top: 45vh;
   z-index: 1;
-  background-color: #0a090870;
   padding: 10px;
   border-radius: 5px;
+  font-family: "Monoton", cursive;
 }
 
 .signup-form {
@@ -29,11 +29,12 @@
   align-items: center;
   top: 65vh;
   z-index: 1;
-  background-color: #0a090870;
   padding: 10px;
   border-radius: 10px;
+  font-family: "Monoton", cursive;
 }
 
 .videoTag {
+  background-color: #0a0908;
   z-index: 0;
 }

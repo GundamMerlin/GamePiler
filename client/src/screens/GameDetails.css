@@ -5,6 +5,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.details-container img {
+  border-radius: 5px;
+}
+
+.details-container h1 {
+  font-family: "Monoton", cursive;
+}
 .game-details {
   display: flex;
   flex-direction: column;
@@ -14,6 +22,10 @@
   margin-left: 30vw;
   margin-right: 30vw;
   color: antiquewhite;
+  font-family: "Righteous", cursive;
+  background-color: #22333b;
+  padding: 10px;
+  border-radius: 20px;
 }
 .details-cover {
   max-height: 500px;
