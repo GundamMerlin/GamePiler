@@ -68,7 +68,7 @@ src
 
 #### ERD Model
 
-![hierarchy](https://raw.githubusercontent.com/GundamMerlin/GamePiler/e70f661ed334f22398e09bad480c59195d24f158/assets/GamePiler_ERD.png)
+![hierarchy](https://github.com/GundamMerlin/GamePiler/blob/main/assets/GamePiler_ERD.png)
 
 > <br>
 
