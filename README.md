@@ -19,9 +19,9 @@ GamePiler
 
 #### Wireframes
 
-![wireframes](https://raw.githubusercontent.com/GundamMerlin/GamePiler/ba1396d5880dfd186961d3921d5ffe1ea2d8a685/assets/Wireframe.png)
+![wireframes](https://github.com/GundamMerlin/GamePiler/blob/main/assets/Wireframe.png)
 
-![moblile_tablet](https://raw.githubusercontent.com/GundamMerlin/GamePiler/ba1396d5880dfd186961d3921d5ffe1ea2d8a685/assets/Wireframe_Mobile_Tablet.png)
+![moblile_tablet](https://github.com/GundamMerlin/GamePiler/blob/main/assets/Wireframe_Mobile_Tablet.png)
 
 #### Component Hierarchy
 
@@ -68,7 +68,7 @@ src
 
 #### ERD Model
 
-![hierarchy](https://raw.githubusercontent.com/GundamMerlin/GamePiler/e70f661ed334f22398e09bad480c59195d24f158/assets/GamePiler_ERD.png)
+![hierarchy](https://github.com/GundamMerlin/GamePiler/blob/main/assets/GamePiler_ERD.png)
 
 > <br>
 
