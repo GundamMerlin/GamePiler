@@ -95,96 +95,31 @@ src
 
 ## Code Showcase
 
-> ```
-> export default function Landing(props) {
+> ```react
+>   export default function Landing(props) {
 >   const [newGame, setNewGame] = useState(false)
 >   const [continueGame, setContinueGame] = useState(false)
->   const handleNew = () => {
+>   const handleNew = () => {setNewGame(!newGame)}
+> const handleContinue = () => {
+> setContinueGame(!continueGame)
+> }
+> return (
+> <div className="landing-page-container">
+>      <BackGroundVideo />
+>      <SignIn verify={props.verify} setCurrentUser={props.setCurrentUser} currentUser={props.currentUser} >continueGame={continueGame} handleContinue={handleContinue} />
+>      <SignUp verify={props.verify} setCurrentUser={props.setCurrentUser} currentUser={props.currentUser} >newGame={newGame} handleNew={handleNew} />
+>
+>    </div>
+> )
+> }
 > ```
 
-    setNewGame(!newGame)
-
-}
-const handleContinue = () => {
-setContinueGame(!continueGame)
-}
-return (
-<div className="landing-page-container">
-
-      <BackGroundVideo />
-      <SignIn verify={props.verify} setCurrentUser={props.setCurrentUser} currentUser={props.currentUser} continueGame={continueGame} handleContinue={handleContinue} />
-      <SignUp verify={props.verify} setCurrentUser={props.setCurrentUser} currentUser={props.currentUser} newGame={newGame} handleNew={handleNew} />
-
-      </div>
-
-)
-}
-
 ```
 
 ```
 
-export default function SignIn(props) {
-
-const [input, setInput] = useState({
-email: "",
-password:""
-});
-const history = useHistory();
-
-const handleChange = (e) => {
-const { name, value } = e.target;
-setInput((prevState) => ({
-...prevState,
-[name]: value,
-}));
-};
-
-const handleSubmit = async (e) => {
-e.preventDefault();
-const res = await signInUser(input);
-if (res.errors === "invalid") {
-alert("Invalid Credentials")
-} else {
-props.setCurrentUser(res)
-props.verify();
-return history.push("/backlogs")
-}
-};
-
-return (
-<div className = "signin-form">
-<h1 onClick = {props.handleContinue}>Continue?</h1>
-{!props.continueGame ? "" : <form className= "signin-form-inner" onChange={handleChange} onSubmit={handleSubmit}>
-<label>Email</label>
-<input name="email" type="email"
-          required />
-<label>Password</label>
-<input name="password" type="password"
-          required />
-<button type="submit">Continue Game</button>
-</form>}
-</div>
-)
-}
-
-```
-
-```
-
-const handleChange = async (e) => {
-if (e.target.checked) {
-await updateBacklog(props.backlog.id, {done:true})
-} else {
-await updateBacklog(props.backlog.id, {done:false})
-}
-props.setToggle(prevState =>!prevState)
-};
-
-```
-
+>
 
 ## Code Issues & Resolutions
 
 >
-```
