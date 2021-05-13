@@ -13,10 +13,10 @@ export default function NavBar(props) {
 
   return (
     <div className="NavBar">
-      <div id="hidden">"blastoise"
-        <img id="blastoise" src="https://raw.githubusercontent.com/GundamMerlin/GamePiler/main/assets/Blastoise.png"></img></div>
       <Link to ="/backlogs"><button>Home</button></Link>
       <Link to="/add-game"><button>Add Game</button></Link>
+      <div id="hidden">"blastoise"
+        <img id="blastoise" src="https://raw.githubusercontent.com/GundamMerlin/GamePiler/main/assets/Blastoise.png"></img></div>
       <Link to="/add-console"><button>Add Console</button></Link>
       <button onClick={logout}>Signout</button>
     </div>
