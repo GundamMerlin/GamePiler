@@ -25,10 +25,6 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  .add-console-container {
-    margin-left: 10px;
-  }
-
   .add-console-container img {
     height: 60%;
     width: 60%;
