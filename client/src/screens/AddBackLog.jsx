@@ -35,7 +35,7 @@ export default function AddBackLog(props) {
 
   return (
     <div className="add-backlog-form">
-      <h1>Add to your backlog</h1>
+      <h1>Add backlog</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         
         <select name="console_id" value ={input.console_id}>

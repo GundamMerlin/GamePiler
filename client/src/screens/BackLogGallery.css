@@ -15,3 +15,12 @@
   justify-content: center;
   font-family: "Monoton", cursive;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .add-backlog-form {
+    padding-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1025px) {
+}

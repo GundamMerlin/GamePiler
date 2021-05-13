@@ -29,7 +29,7 @@ export default function AddConsole(props) {
 
   return (
     <div className="add-console-container">
-      <img src="https://www.nicepng.com/png/detail/101-1011841_fox-pokemon-pixel-art-blastoise.png"></img>
+      <img src="https://raw.githubusercontent.com/GundamMerlin/GamePiler/main/assets/clipart1977071.png"></img>
       <h1>Add Console</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
       <label>Title:</label>
