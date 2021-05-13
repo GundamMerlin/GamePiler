@@ -4,10 +4,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 50vh;
+  margin-top: 30vh;
+  background-color: #0a0908;
+}
+
+.add-console-container h1 {
+  font-family: "Monoton", cursive;
 }
 
 .add-console-container form {
   display: flex;
   flex-direction: column;
+  font-family: "Righteous", cursive;
+  background-color: #0a0908;
 }

@@ -31,7 +31,8 @@ export default function AddGame(props) {
   }
 
   return (
-    <div className = "add-game-container">
+    <div className="add-game-container">
+      <img src ="https://mystickermania.com/cdn/stickers/games/sticker_2951-512x512.png"></img>
       <h1>Add Game</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
       <label>Title:</label>

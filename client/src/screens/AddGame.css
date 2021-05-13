@@ -4,10 +4,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #0a0908;
+}
+.add-game-container h1 {
+  font-family: "Monoton", cursive;
 }
 
+.add-game-container img {
+  height: 20%;
+  width: 20%;
+}
 .add-game-container form {
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-family: "Righteous", cursive;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .add-game-container img {
+    height: 60%;
+    width: 60%;
+  }
 }
