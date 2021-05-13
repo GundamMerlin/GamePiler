@@ -45,7 +45,7 @@ src
       |__Landing.jsx
       |__Gallery.jsx
       |__Details.jsx
-      |__Edit.jsx
+      |__Edit Backlog.jsx
       |__AddGame.jsx
 
 ```
@@ -54,15 +54,27 @@ src
 
 > Use this section to estimate the time necessary to build out each of the components you've described above.
 
-| Task                | Priority | Estimated Time | Actual Time | Status |
-| ------------------- | :------: | :------------: | :---------: | :----: |
-| Proposal/Concepting |    H     |     2 hrs      |             | Active |
-| Create Rails App    |    H     |     3 hrs      |             |  TBD   |
-| Create Models       |          |                |             |  TBD   |
-| Create Controllers  |          |                |             |        |
-| Create Routes       |          |                |             |        |
-| Seed Data           |          |                |             |        |
-|                     |          |                |             |        |
+| Task                          | Priority | Estimated Time | Actual Time |  Status  |
+| ----------------------------- | :------: | :------------: | :---------: | :------: |
+| Proposal/Concepting           |    H     |     2 hrs      |    2hrs     | Complete |
+| Create Rails App              |    H     |     3 hrs      |    4hrs     | Complete |
+| Create Models                 |    H     |     1 hrs      |    .5hrs    | Complete |
+| Create Controllers            |    H     |     1 hrs      |   .75hrs    | Complete |
+| Create Routes                 |    H     |     .5hrs      |    .5hrs    | Complete |
+| Seed Data                     |    H     |     1 hrs      |    1hrs     | Complete |
+| BackEnd Auth                  |    H     |     1 hrs      |    .5hrs    | Complete |
+| BackEnd Deployment            |    H     |     1 hrs      |    1hrs     | Complete |
+| Frontend Initialize           |    H     |    .25 hrs     |   .15hrs    | Complete |
+| Landing (CSS/JSX)             |    H     |     2 hrs      |    4hrs     |  Active  |
+| Gallery (CSS/JSX)             |    H     |     2 hrs      |    .5hrs    |  Active  |
+| Add Game (CSS/JSX)            |    H     |     1 hrs      |    1hrs     | Complete |
+| Add Console (CSS/JSX)         |    H     |     .5 hrs     |    .5hrs    | Complete |
+| Add Backlog (CSS/JSX)         |    H     |     1 hrs      |    1hrs     | Complete |
+| Edit Backlog Button (CSS/JSX) |    H     |     2 hrs      |    2hrs     | Complete |
+| Delete Backlog                |    H     |     1 hrs      |    2hrs     | Complete |
+| Post MVP Styling              |    H     |    4-6 hrs     |    6hrs     |  Active  |
+| Linting                       |    H     |     2 hrs      |    2hrs     | Complete |
+| ReadME                        |    H     |     2 hrs      |    2hrs     | Complete |
 
 <br>
 
@@ -77,6 +89,8 @@ src
 ## Post-MVP
 
 > Ability to pull Game Covers from a third-party API to generate Gallery Images automatically
+> Add a search feature
+> Add filtering method to tie games to specific consoles
 
 ## Code Showcase
 
