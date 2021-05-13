@@ -3,6 +3,7 @@ import { createConsole } from './../services'
 import { useState } from "react"
 import "./AddConsole.css"
 
+
 export default function AddConsole(props) {
   const {setToggle} =props
   const defaultInput = {
@@ -27,7 +28,8 @@ export default function AddConsole(props) {
   }
 
   return (
-    <div className = "add-console-container">
+    <div className="add-console-container">
+      <img src=></img>
       <h1>Add Console</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
       <label>Title:</label>
