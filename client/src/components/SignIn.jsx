@@ -36,7 +36,7 @@ export default function SignIn(props) {
   return (
     <div className = "signin-form">
       <h1 onClick = {props.handleContinue}>Continue?</h1>
-      {!props.continueGame ? "" : <form onChange={handleChange} onSubmit={handleSubmit}>
+      {!props.continueGame ? "" : <form className= "signin-form-inner" onChange={handleChange} onSubmit={handleSubmit}>
         <label>Email</label>
         <input name="email" type="email"
           required />

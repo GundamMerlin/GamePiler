@@ -5,6 +5,7 @@
   height: 100vh;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
   align-items: center;
 }
 
@@ -20,12 +21,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  top: 45vh;
+  top: 17vh;
   z-index: 1;
   padding: 10px;
   border-radius: 5px;
   font-family: "Monoton", cursive;
   padding: 4px;
+}
+
+.signin-form-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-form-inner button {
+  margin: 5px;
 }
 
 .signup-form {
@@ -41,7 +51,28 @@
   font-family: "Monoton", cursive;
 }
 
+.signup-form label {
+  color: #e78ac0df;
+}
+
 .videoTag {
-  background-color: #0a0908;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   z-index: 0;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .signin-form {
+    margin-bottom: 50px;
+    top: 10vh;
+  }
+
+  .signup-form {
+    margin-top: 50px;
+    top: 52vh;
+  }
 }

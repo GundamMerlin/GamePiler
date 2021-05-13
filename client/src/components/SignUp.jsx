@@ -41,7 +41,7 @@ export default function SignUp(props) {
     <div className ="signup-form">
       <h1 onClick={props.handleNew}>New Game?</h1>
       {!props.newGame ? "" :
-        <form onChange={handleChange} onSubmit={handleSubmit}>
+        <form className ="signin-form-inner"onChange={handleChange} onSubmit={handleSubmit}>
           <label>Email</label>
           <input
             name="email"

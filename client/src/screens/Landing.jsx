@@ -21,6 +21,7 @@ export default function Landing(props) {
       <BackGroundVideo />
       <SignIn verify={props.verify} setCurrentUser={props.setCurrentUser} currentUser={props.currentUser} continueGame={continueGame} handleContinue={handleContinue} />
       <SignUp verify={props.verify} setCurrentUser={props.setCurrentUser} currentUser={props.currentUser} newGame={newGame} handleNew={handleNew} />
+      
       </div>
   )
 }
