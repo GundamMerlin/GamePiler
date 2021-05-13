@@ -32,7 +32,7 @@ export default function AddGame(props) {
 
   return (
     <div className="add-game-container">
-      <img src ="https://mystickermania.com/cdn/stickers/games/sticker_2951-512x512.png"></img>
+      <img src ="https://media.giphy.com/media/d2Z7NqwF3yImFNHW/source.gif"></img>
       <h1>Add Game</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
       <label>Title:</label>
