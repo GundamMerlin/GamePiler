@@ -13,8 +13,8 @@
 
 #hidden #blastoise {
   display: none;
-  width: 50px;
-  height: auto;
+  width: auto;
+  height: 4vh;
   padding-bottom: 20px;
 }
 #hidden:hover #blastoise {
