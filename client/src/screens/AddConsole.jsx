@@ -29,7 +29,7 @@ export default function AddConsole(props) {
 
   return (
     <div className="add-console-container">
-      <img src=></img>
+      <img src="https://www.nicepng.com/png/detail/101-1011841_fox-pokemon-pixel-art-blastoise.png"></img>
       <h1>Add Console</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
       <label>Title:</label>
